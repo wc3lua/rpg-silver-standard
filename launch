@@ -1,0 +1,4 @@
+ceres build -- --map mpq.w3x --output mpq
+wine '/home/writecoin/Games/Warcraft III Public Test/x86_64/Warcraft III.exe' \
+-loadfile "/home/writecoin/Projects/Lua/ceres-lua-template/target/mpq.w3x" -launch -windowmode -windowed
+clear

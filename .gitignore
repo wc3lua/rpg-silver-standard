@@ -1,6 +1,9 @@
 /*
 !maps
+!modules
 !src
+!main.lua
+!launch
 !.gitignore
 !build.lua
 !README.md

@@ -1,3 +1,3 @@
-ceres.layout.srcDirectories = {"src"}
+ceres.layout.srcDirectories = {"./"}
 
 require "runconfig"
