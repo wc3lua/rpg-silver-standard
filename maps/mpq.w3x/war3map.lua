@@ -1,3 +1,5 @@
+gg_trg_data = nil
+gg_unit_Hblm_0001 = nil
 function InitGlobals()
 end
 
@@ -7,7 +9,7 @@ function CreateUnitsForPlayer0()
     local unitID
     local t
     local life
-    u = CreateUnit(p, FourCC("Hblm"), -195.2, 52.4, 210.482)
+    gg_unit_Hblm_0001 = CreateUnit(p, FourCC("Hblm"), -195.2, 52.4, 210.482)
 end
 
 function CreatePlayerBuildings()
@@ -20,6 +22,24 @@ end
 function CreateAllUnits()
     CreatePlayerBuildings()
     CreatePlayerUnits()
+end
+
+function Trig_data_Actions()
+    ShowUnitShow(gg_unit_Hblm_0001)
+        DestroyTrigger(GetTriggeringTrigger())
+end
+
+function InitTrig_data()
+    gg_trg_data = CreateTrigger()
+    TriggerAddAction(gg_trg_data, Trig_data_Actions)
+end
+
+function InitCustomTriggers()
+    InitTrig_data()
+end
+
+function RunInitializationTriggers()
+    ConditionalTriggerExecute(gg_trg_data)
 end
 
 function InitCustomPlayerSlots()
@@ -44,6 +64,8 @@ function main()
     CreateAllUnits()
     InitBlizzard()
     InitGlobals()
+    InitCustomTriggers()
+    RunInitializationTriggers()
 end
 
 function config()
