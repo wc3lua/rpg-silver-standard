@@ -1,1 +1,1 @@
-require 'modules.Ceres-example.example'
+require 'modules.ceres-example.example'
