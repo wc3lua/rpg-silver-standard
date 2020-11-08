@@ -1,9 +1,2 @@
-/*
-!maps
-!src
-!main.lua
-!launch
-!.gitignore
-!build.lua
-!README.md
-!build
+.wlpm
+target
