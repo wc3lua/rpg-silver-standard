@@ -13,47 +13,65 @@ alias remote='git remote set-url origin'
 alias pull='git pull'
 alias push='git push'
 alias setup='source ./install'
+```
 
+```
 function create(){
     gh repo create $1/$2
     clone $1/$2
 }
+```
 
+```
 function a-clone(){
 	clone $1/$2
 	cd $2
 	remote $3
 }
+```
 
+```
 function a(){
 	git add --all
 	git commit -m "$1"
 }
+```
 
+```
 function ap(){
 	a $1
 	push
 }
+```
 
+```
 function apm(){
     cd $1
     ap $2
     cd ..
 }
+```
 
+```
 function asUser(){
     git config user.name $USERNAME
     git config user.email $email
 }
+```
 
+```
 alias rm="rm -rf"
 alias cp="cp -r"
 alias c=clear
+```
 
+```
 function setup(){
     source ./$1/install
 }
+```
 
+```
 function req(){
 	clone $1/$2
 	cd $2
@@ -61,24 +79,32 @@ function req(){
 	cd ..
     setup $2
 }
+```
 
+```
 function mkcd(){
 	mkdir $1
 	cd $1
 }
+```
 
+```
 function update(){
     cd ..
     setup
     cd modules
 }
+```
 
+```
 function ceres-b(){
     cd ..
     ceres build -- --map $1.w3x --output mpq
     cd modules
 }
+```
 
+```
 function ceres-r(){
     cd ..
     ceres run -- --map $1.w3x --output mpq
