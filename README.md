@@ -7,90 +7,90 @@
 
 Для быстрой установки пропишите сначала в файле .bashrc, который должен находиться у вас по пути C:\Users\$USERNAME\ на Windows (можете его создать там) или ~/ на Linux, следующие алиасы и функции (они понадобятся, чтобы вводить краткие команды):
 
-<alias clone='gh repo clone'
-alias remote='git remote set-url origin'
-alias pull='git pull'
-alias push='git push'
-alias setup='source ./install'>
+`alias clone='gh repo clone'`
+`alias remote='git remote set-url origin'`
+`alias pull='git pull'`
+`alias push='git push'`
+`alias setup='source ./install'`
 
-<function create(){
-    gh repo create $1/$2
-    clone $1/$2
-}>
+`function create(){`
+`    gh repo create $1/$2`
+`    clone $1/$2`
+`}`
 
-<function a-clone(){
-	clone $1/$2
-	cd $2
-	remote $3
-}>
+`function a-clone(){`
+`	clone $1/$2`
+`	cd $2`
+`	remote $3`
+`}`
 
-<function a(){
-	git add --all
-	git commit -m "$1"
-}>
+`function a(){`
+`	git add --all`
+`	git commit -m "$1"`
+`}`
 
-<function ap(){
-	a $1
-	push
-}>
+`function ap(){`
+`	a $1`
+`	push`
+`}`
 
-<function apm(){
-    cd $1
-    ap $2
-    cd ..
-}>
+`function apm(){`
+`    cd $1`
+`    ap $2`
+`    cd ..`
+`}`
 
-<function asUser(){
-    git config user.name $USERNAME
-    git config user.email $email
-}>
+`function asUser(){`
+`    git config user.name $USERNAME`
+`    git config user.email $email`
+`}`
 
-<alias rm="rm -rf"
-alias cp="cp -r"
-alias c=clear>
+`alias rm="rm -rf"`
+`alias cp="cp -r"`
+`alias c=clear`
 
-<function setup(){
-    source ./$1/install
-}>
+`function setup(){`
+`    source ./$1/install`
+`}`
 
-<function req(){
-	clone $1/$2
-	cd $2
-	pull
-	cd ..
-    setup $2
-}>
+`function req(){`
+`	clone $1/$2`
+`	cd $2`
+`	pull`
+`	cd ..`
+`    setup $2`
+`}`
 
-<function mkcd(){
-	mkdir $1
-	cd $1
-}>
+`function mkcd(){`
+`	mkdir $1`
+`	cd $1`
+`}`
 
-<function update(){
-    cd ..
-    setup
-    cd modules
-}>
+`function update(){`
+`    cd ..`
+`    setup`
+`    cd modules`
+`}`
 
-<function ceres-b(){
-    cd ..
-    ceres build -- --map $1.w3x --output mpq
-    cd modules
-}>
+`function ceres-b(){`
+`    cd ..`
+`    ceres build -- --map $1.w3x --output mpq`
+`    cd modules`
+`}`
 
-<function ceres-r(){
-    cd ..
-    ceres run -- --map $1.w3x --output mpq
-    cd modules
-}>
-<function l-ceres-b(){
-	ceres-b $1
-}
-export WARCRAFT_PATH='path/to/warcraft iii.exe'
-function l-ceres-r(){
-	l-ceres-b $1
-	wine '$WARCRAFT_PATH' -loadfile ./target/$1.w3x -launch -windowmode -windowed
-}>
+`function ceres-r(){`
+`    cd ..`
+`    ceres run -- --map $1.w3x --output mpq`
+`    cd modules`
+`}`
+`function l-ceres-b(){`
+`	ceres-b $1`
+`}`
+`export WARCRAFT_PATH='path/to/warcraft iii.exe'`
+`function l-ceres-r(){`
+`	l-ceres-b $1`
+`	wine '$WARCRAFT_PATH' -loadfile ./target/$1.w3x -launch -windowmode -windowed`
+`}`
 
 Установите программы Git, Github Cli, возьмите на вооружение bash-терминал. Откройте его, и далее напишите первым `cd <желаемое место, где будет находиться папка проекта>`. И чтобы установить данный проект, воспользуйтесь командой `req wc3lua ceres-lua-template`
 
