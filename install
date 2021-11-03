@@ -1,4 +1,4 @@
-mkcd ceres-lua-template/modules
+mkcd utils/modules
 
 req wc3lua japi
 req wc3lua other-functions
