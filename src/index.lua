@@ -1,1 +1,1 @@
-print('lua')
+print('RPG Silver Standard')
