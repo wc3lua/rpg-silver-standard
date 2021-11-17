@@ -2,3 +2,4 @@ mkcd utils/modules
 
 req wc3lua japi
 req wc3lua other-functions
+req wc3lua hot-reload

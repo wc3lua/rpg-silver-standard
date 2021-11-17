@@ -1,4 +1,4 @@
-gg_trg_data = nil
+gg_trg_setter = nil
 gg_unit_Hblm_0001 = nil
 function InitGlobals()
 end
@@ -9,7 +9,7 @@ function CreateUnitsForPlayer0()
     local unitID
     local t
     local life
-    gg_unit_Hblm_0001 = CreateUnit(p, FourCC("Hblm"), -195.2, 52.4, 210.482)
+    gg_unit_Hblm_0001 = CreateUnit(p, FourCC("Hblm"), 183.4, -23.6, 352.573)
 end
 
 function CreatePlayerBuildings()
@@ -24,22 +24,17 @@ function CreateAllUnits()
     CreatePlayerUnits()
 end
 
-function Trig_data_Actions()
+function Trig_setter_Actions()
     ShowUnitShow(gg_unit_Hblm_0001)
-        DestroyTrigger(GetTriggeringTrigger())
 end
 
-function InitTrig_data()
-    gg_trg_data = CreateTrigger()
-    TriggerAddAction(gg_trg_data, Trig_data_Actions)
+function InitTrig_setter()
+    gg_trg_setter = CreateTrigger()
+    TriggerAddAction(gg_trg_setter, Trig_setter_Actions)
 end
 
 function InitCustomTriggers()
-    InitTrig_data()
-end
-
-function RunInitializationTriggers()
-    ConditionalTriggerExecute(gg_trg_data)
+    InitTrig_setter()
 end
 
 function InitCustomPlayerSlots()
@@ -65,16 +60,15 @@ function main()
     InitBlizzard()
     InitGlobals()
     InitCustomTriggers()
-    RunInitializationTriggers()
 end
 
 function config()
-    SetMapName("TRIGSTR_003")
-    SetMapDescription("TRIGSTR_005")
+    SetMapName("TRIGSTR_001")
+    SetMapDescription("TRIGSTR_003")
     SetPlayers(1)
     SetTeams(1)
     SetGamePlacement(MAP_PLACEMENT_USE_MAP_SETTINGS)
-    DefineStartLocation(0, 2176.0, 1664.0)
+    DefineStartLocation(0, 192.0, -64.0)
     InitCustomPlayerSlots()
     SetPlayerSlotAvailable(Player(0), MAP_CONTROL_USER)
     InitGenericPlayerSlots()
